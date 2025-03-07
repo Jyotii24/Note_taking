@@ -1,1 +1,2 @@
-# Note_taking
+# Note-Taking
+Make Notes

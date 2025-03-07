@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassy Note-Taking App</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>NoteNest</h1>
+      <div class="theme-toggle">
+        <button id="deleteAllBtn" class="light1">Reset all</button>
+        <button id="toggleTheme">Light 🌞</button>
+
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <button onclick="execCommand('bold')">Bold</button>
+      <button onclick="execCommand('italic')">Italic</button>
+      <button onclick="execCommand('underline')">Underline</button>
+      <label for="color"><input placeholder="Color" type="color" id="bgColorPicker"
+          title="Pick text background color" />BG</label>
+      <label for="color"><input placeholder="Color" type="color" id="textColorPicker"
+          title="Pick text background color" />A</label>
+      <select id="emojiPicker">
+        <option value="😊">😊</option>
+        <option value="😀">😀</option>
+        <option value="✨">✨</option>
+        <option value="❤️">❤️</option>
+<option value="😎">😎</option>
+<option value="😜">😜</option>
+<option value="😢">😢</option>
+<option value="🤣">🤣</option>
+<option value="🥳">🥳</option>
+<option value="💖">💖</option>
+<option value="❤️">❤️</option>
+<option value="🌟">🌟</option>
+<option value="🌈">🌈</option>
+<option value="🎉">🎉</option>
+<option value="🔥">🔥</option>
+<option value="🍀">🍀</option>
+<option value="🎶">🎶</option>
+<option value="🌻">🌻</option>
+<option value="🐱">🐱</option>
+<option value="🐶">🐶</option>
+      </select>
+    </div>
+
+    <main class="main-container">
+      <button class="button" id="btn"><span class="plus">+</span><br><span id="add">Add Note</span></button>
+      <div class="left-panel" id="myContainer">
+        <h2>Add Note</h2>
+        
+        
+        <form id="noteForm">
+          <input type="text" id="noteTitle" placeholder="Title" required />
+          <div id="noteContent" contenteditable="true" class="note-content" placeholder="Write your note here..."
+            required></div>
+            <button type="button" id="saveNote" class="add-note-btn">Save Note</button>
+        </form>
+     
+     
+      </div>
+      <div class="right-panel" id="notesContainer"></div>
+    </main>
+  </div>
+
+  <script src="script.js">
+  
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,421 @@
+
+.edit-btn {
+position: absolute;
+top: 10px;
+right: 90px;
+background: red;
+color: white;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 0.8rem;
+font-weight: bold;
+}
+
+:root {
+--bg-color: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);
+--text-color: #050505;
+--note-bg: rgba(204, 202, 202, 0.6);
+--header-bg: darkcyan;
+--button-bg: rgba(147, 158, 158, 0.7);
+--button-text: #070707;
+--border-color: rgba(0, 0, 0, 0.2);
+--shadow-color: rgba(19, 18, 18, 0.1);
+--backgroun-color: #d0c4c4;
+}
+
+body.dark {
+--bg-color: #535050;
+--text-color: #f5f2f2;
+--color: white;
+--note-bg: rgba(50, 50, 50, 0.6);
+--header-bg: rgba(28, 100, 96, 0.8);
+--button-bg: rgba(178, 126, 115, 0.7);
+--note1-bg: rgba(101, 97, 97, 0.6);
+--backgroun-color: #454444;
+
+}
+
+
+body {
+font-family: 'Arial', sans-serif;
+margin: 0;
+padding: 0;
+height: auto;
+margin-bottom: 20px;
+background-color: var(--bg-color);
+color: var(--text-color);
+}
+
+.app {
+    display: flex;
+    padding: 0;
+flex-direction: column;
+}
+
+.header {
+
+background: var(--header-bg);
+color: rgb(245, 236, 236);
+text-shadow: 2px 3px 4px #070707;
+padding: 5px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+backdrop-filter: blur(10px);
+width: 100%;
+box-shadow: 0px 5px 8px var(--shadow-color);
+border: 2px solid rgba(255, 255, 255, 0.2);
+border-radius: 10px;
+}
+
+.toolbar {
+background: var(--note-bg);
+padding: 10px;
+display: flex;
+gap: 0.7rem;
+border-bottom: 1px solid var(--border-color);
+backdrop-filter: blur(10px);
+margin: 5px;
+width: 100%;
+}
+
+.toolbar button,
+.toolbar select,
+.toolbar label {
+border: none;
+background: var(--button-bg);
+color: var(--button-text);
+padding: 0.5rem;
+border-radius: 5px;
+cursor: pointer;
+box-shadow: 0px 2px 4px var(--shadow-color);
+font-size: 0.9rem;
+font-weight: bold;
+}
+
+label:hover,
+select:hover {
+background: rgba(3, 218, 197, 1);
+}
+
+.toolbar button:hover {
+background: rgba(3, 218, 197, 1);
+}
+
+.main-container {
+display: flex;
+height: calc(100vh - 120px);
+background-color: var(--backgroun-color);
+width: 100%;
+}
+
+.left-panel {
+
+display: none;
+width: 500px;
+height: 500px;
+border-radius: 5px;
+margin: 10px;
+padding: 4px;
+background: var(--note-bg);
+border-right: 1px solid var(--border-color);
+box-shadow: 2px 0px 8px var(--shadow-color);
+backdrop-filter: blur(10px);
+border-radius: 5px;
+}
+
+.right-panel {
+flex: 1;
+padding: 1rem;
+display: flex;
+flex-wrap: wrap;
+gap: 2rem;
+justify-content: flex-start;
+align-items: flex-start;
+background-color: rgb(181, 190, 157);
+border-left: 1px solid var(--border-color);
+overflow-y: auto;
+border-radius: 5px;
+
+}
+
+.note {
+    background-color: rgb(222, 222, 229);
+background: var(--note-bg);
+border: 1px solid var(--border-color);
+border-radius: 8px;
+padding: 8px;
+width: 350px;
+height: 250px;
+box-shadow: 0px 4px 6px var(--shadow-color);
+cursor: pointer;
+backdrop-filter: blur(10px);
+position: relative;
+display: flex;
+flex-direction: column;
+}
+
+.note-header {
+display: flex;
+/* justify-content: space-between;
+align-items: center; */
+color:rgb(10, 11, 11)
+}
+
+.note-content {
+height: 300px;
+margin-top: 0.5rem;
+overflow-y: auto;
+border: none;
+outline: none;
+font-size: 0.9rem;
+background: transparent;
+resize: none;
+overflow-y: auto;
+}
+
+.note-content[contenteditable="true"] {
+border: 2px solid var(--border-color);
+padding: 0.5rem;
+border-radius: 5px;
+}
+
+.delete-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+background: red;
+color: white;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 0.8rem;
+}
+
+.delete-btn:hover {
+background: rgb(30, 6, 6);
+}
+
+#noteTitle {
+border-radius: 5px;
+height: 30px;
+background: var(--note1-bg);
+border: 1px solid var(--border-color);
+box-shadow: 0px 2px 4px var(--shadow-color);
+color: var(--color);
+
+}
+
+#saveNote {
+background-color: darkcyan;
+color: white;
+border: none;
+padding: 0.5rem;
+border-radius: 5px;
+cursor: pointer;
+font-size: 0.9rem;
+margin-left: 100px;
+margin-top: 10px;
+width: 180px;
+font-weight: bold;
+
+}
+
+#saveNote:hover {
+background-color: rgb(112, 135, 135);
+}
+
+#toggleTheme {
+background-color: #e9dfdf;
+width: 100px;
+
+color: #0c0c0c;
+border: none;
+padding: 15px;
+border-radius: 20px;
+cursor: pointer;
+font-size: 16px;
+font-weight: bold;
+box-shadow: 2px 4px 6px rgb(226, 219, 219);
+
+}
+
+#toggleTheme:hover {
+background-color: teal;
+}
+
+.light1 {
+background-color: #eee3e3;
+width: 100px;
+margin: 12px;
+color: #0c0c0c;
+box-shadow: 2px 4px 6px rgb(226, 219, 219);
+border: none;
+padding: 15px;
+border-radius: 20px;
+cursor: pointer;
+font-size: 16px;
+font-weight: bold;
+}
+
+.light1:hover {
+background-color: teal;
+}
+
+.button {
+    height: 100px;
+    width: 150px;
+    margin: 20px auto;
+    background-color: darkcyan;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial shadow */
+    animation: bounce 2s infinite; /* Automatic bounce effect */
+  }
+  
+  .button:hover {
+    background-color: rgb(92, 240, 240); /* Change background on hover */
+    transform: scale(1.1); /* Enlarge slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0); /* Original position */
+    }
+    50% {
+      transform: translateY(-15px); /* Move up */
+    }
+  }
+  
+
+.plus {
+font-size: 100px;
+
+}
+
+#add {
+font-size: 20px;
+font-weight: bold;
+color:rgb(251, 252, 252);
+text-shadow: 4px, 6px black;
+
+}
+
+.left,
+.right {
+margin: 20px;
+border-radius: 2px solid rgb(137, 130, 130);
+box-shadow: 4px, 6px black;
+}
+
+
+html,
+body {
+overflow-x: hidden;
+margin: 0;
+padding: 0;
+}
+
+* {
+box-sizing: border-box;
+}
+
+/* Extra Small Devices (Mobile) */
+@media (max-width: 480px) {
+.main-container {
+display: flex;
+flex-direction: column;
+height: 100vh; 
+padding-bottom: 60px;
+}
+.toolbar{
+padding: 10px;
+gap: 10px;
+display: flex;
+flex-wrap: wrap;
+}
+.toolbar button,
+.toolbar select,
+.toolbar label {
+padding: 3px;
+}
+
+
+.light1{
+margin-left: 50px;
+padding: 5px;
+}
+
+#toggleTheme{
+margin-left: 50px;
+padding: 5px;
+
+}
+
+.left-panel {
+    display: none;
+    width: 300px;
+    height: 230px;
+   border-radius: 5px;
+   margin-top: 5px;
+    }
+
+.note-content{
+height: 70px;
+}
+
+.note {
+width: 100%;
+height: 200px;
+flex-grow: 1; 
+}
+
+#saveNote {
+   
+    padding: 5px;
+    margin-left: 80px;
+    margin-top: 10px;
+    width: 100px;
+    font-size: 0.7rem;
+    
+    }
+
+
+#add {
+   
+    display: none;
+    }
+    
+}
+
+
+
+@media (max-width: 768px) {
+.main-container {
+display: flex;
+flex-direction: column;
+height: 100vh; /* Full viewport height */
+padding-bottom: 20px; /* Space for the button */
+}
+
+
+/* Larger Devices (Tablets and Up) */
+@media (max-width: 1024px) {
+.note {
+width: 100%;
+
+flex-grow: 1; 
+}
+}
+
+
+
+}
